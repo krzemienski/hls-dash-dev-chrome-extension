@@ -5,6 +5,7 @@ import { useManifestStore } from '../store/manifest-store';
 import { ViewerHeader } from '../components/viewer/ViewerHeader';
 import { RawView } from '../components/viewer/RawView';
 import { StructuredView } from '../components/viewer/StructuredView';
+import { UrlInput } from '../components/viewer/UrlInput';
 
 function Viewer() {
   const manifest = useManifestStore((state) => state.manifest);
@@ -17,6 +18,11 @@ function Viewer() {
       {manifest && <ViewerHeader />}
 
       <main className="container mx-auto px-6 py-6">
+        {/* URL Input */}
+        <div className="mb-6">
+          <UrlInput />
+        </div>
+
         {loading && (
           <div className="text-center py-12">
             <div className="text-lg text-gray-600">Loading manifest...</div>
