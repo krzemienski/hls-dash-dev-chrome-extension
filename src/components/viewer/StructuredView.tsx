@@ -10,6 +10,7 @@ import { BandwidthCalculator } from './BandwidthCalculator';
 import { StatsDashboard } from './StatsDashboard';
 import { UrlInfoPanel } from './UrlInfoPanel';
 import { DownloadManager } from './DownloadManager';
+import { PerformanceMetrics } from './PerformanceMetrics';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -114,6 +115,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Bandwidth Calculator */}
       <BandwidthCalculator manifest={manifest} />
+
+      {/* Performance Metrics */}
+      <PerformanceMetrics manifest={manifest} />
 
       {/* Variants Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
