@@ -8,6 +8,8 @@ import { StructuredView } from '../components/viewer/StructuredView';
 import { TimelineView } from '../components/viewer/TimelineView';
 import { UrlInput } from '../components/viewer/UrlInput';
 import { parseManifest } from '../lib/parsers';
+import { addToHistory } from '../lib/utils/storage';
+import type { ManifestHistoryItem } from '../types/manifest';
 
 function Viewer() {
   const manifest = useManifestStore((state) => state.manifest);
@@ -43,6 +45,16 @@ function Viewer() {
 
       const parsed = parseManifest(response.data, url);
       setManifest(parsed);
+
+      // Add to history
+      const historyItem: ManifestHistoryItem = {
+        url,
+        format: parsed.format,
+        timestamp: Date.now(),
+        variantCount: parsed.variants.length,
+        duration: parsed.metadata.duration
+      };
+      await addToHistory(historyItem);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load manifest');
     } finally {

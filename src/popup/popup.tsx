@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import '../styles/globals.css';
 import type { DetectedManifest } from '../types/manifest';
+import { HistoryTab } from '../components/popup/HistoryTab';
 
 function Popup() {
   const [detectedManifests, setDetectedManifests] = useState<DetectedManifest[]>([]);
@@ -115,9 +116,7 @@ function Popup() {
         )}
 
         {activeTab === 'history' && (
-          <div className="p-4 text-center text-gray-500">
-            History view coming soon...
-          </div>
+          <HistoryTab onManifestClick={handleManifestClick} />
         )}
 
         {activeTab === 'settings' && (
