@@ -6,6 +6,7 @@ import { ValidationReport } from './ValidationReport';
 import { SegmentList } from './SegmentList';
 import { BitrateChart } from './BitrateChart';
 import { CodecInfoPanel } from './CodecInfoPanel';
+import { BandwidthCalculator } from './BandwidthCalculator';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -101,6 +102,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Codec Information */}
       <CodecInfoPanel manifest={manifest} />
+
+      {/* Bandwidth Calculator */}
+      <BandwidthCalculator manifest={manifest} />
 
       {/* Variants Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
