@@ -1,6 +1,8 @@
 // src/components/viewer/VariantList.tsx
+import { useState } from 'react';
 import type { Variant } from '../../types/manifest';
 import { useManifestStore } from '../../store/manifest-store';
+import { VariantDetailModal } from './VariantDetailModal';
 
 interface VariantListProps {
   variants: Variant[];
@@ -9,6 +11,7 @@ interface VariantListProps {
 export function VariantList({ variants }: VariantListProps) {
   const selectedVariantId = useManifestStore((state) => state.selectedVariantId);
   const setSelectedVariant = useManifestStore((state) => state.setSelectedVariant);
+  const [detailVariant, setDetailVariant] = useState<Variant | null>(null);
 
   // Group variants by type
   const videoVariants = variants.filter(v => v.type === 'video');
@@ -30,6 +33,7 @@ export function VariantList({ variants }: VariantListProps) {
                 variant={variant}
                 selected={variant.id === selectedVariantId}
                 onSelect={() => setSelectedVariant(variant.id)}
+                onShowDetails={() => setDetailVariant(variant)}
               />
             ))}
           </div>
@@ -49,6 +53,7 @@ export function VariantList({ variants }: VariantListProps) {
                 variant={variant}
                 selected={variant.id === selectedVariantId}
                 onSelect={() => setSelectedVariant(variant.id)}
+                onShowDetails={() => setDetailVariant(variant)}
               />
             ))}
           </div>
@@ -68,10 +73,19 @@ export function VariantList({ variants }: VariantListProps) {
                 variant={variant}
                 selected={variant.id === selectedVariantId}
                 onSelect={() => setSelectedVariant(variant.id)}
+                onShowDetails={() => setDetailVariant(variant)}
               />
             ))}
           </div>
         </div>
+      )}
+
+      {/* Detail Modal */}
+      {detailVariant && (
+        <VariantDetailModal
+          variant={detailVariant}
+          onClose={() => setDetailVariant(null)}
+        />
       )}
     </div>
   );
@@ -81,9 +95,10 @@ interface VariantCardProps {
   variant: Variant;
   selected: boolean;
   onSelect: () => void;
+  onShowDetails: () => void;
 }
 
-function VariantCard({ variant, selected, onSelect }: VariantCardProps) {
+function VariantCard({ variant, selected, onSelect, onShowDetails }: VariantCardProps) {
   return (
     <div
       onClick={onSelect}
@@ -114,8 +129,8 @@ function VariantCard({ variant, selected, onSelect }: VariantCardProps) {
           </div>
         </div>
 
-        {/* Type badge */}
-        <div>
+        <div className="flex items-center gap-3">
+          {/* Type badge */}
           <span className={`px-2 py-1 rounded text-xs font-medium ${
             variant.type === 'video' ? 'bg-purple-100 text-purple-700' :
             variant.type === 'audio' ? 'bg-green-100 text-green-700' :
@@ -123,6 +138,17 @@ function VariantCard({ variant, selected, onSelect }: VariantCardProps) {
           }`}>
             {variant.type}
           </span>
+
+          {/* Details button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onShowDetails();
+            }}
+            className="px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded"
+          >
+            Details
+          </button>
         </div>
       </div>
     </div>
