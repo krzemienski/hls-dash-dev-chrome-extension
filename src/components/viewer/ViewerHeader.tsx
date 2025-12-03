@@ -1,5 +1,4 @@
 // src/components/viewer/ViewerHeader.tsx
-import React from 'react';
 import { useManifestStore } from '../../store/manifest-store';
 
 export function ViewerHeader() {

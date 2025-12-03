@@ -1,5 +1,4 @@
 // src/components/viewer/StructuredView.tsx
-import React from 'react';
 import type { ParsedManifest } from '../../types/manifest';
 import { VariantList } from './VariantList';
 

@@ -1,5 +1,5 @@
 // src/components/viewer/RawView.tsx
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-markup';
 import type { ParsedManifest } from '../../types/manifest';

@@ -1,5 +1,4 @@
 // src/components/viewer/VariantList.tsx
-import React from 'react';
 import type { Variant } from '../../types/manifest';
 import { useManifestStore } from '../../store/manifest-store';
 

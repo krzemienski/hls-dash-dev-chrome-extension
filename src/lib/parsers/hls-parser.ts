@@ -8,7 +8,7 @@ export function parseHLS(content: string, baseUrl: string): ParsedManifest {
   parser.push(content);
   parser.end();
 
-  const manifest = parser.manifest;
+  const manifest = parser.manifest as any;
 
   // Extract variants from playlists
   const variants: Variant[] = (manifest.playlists || []).map((playlist: any, index: number) => {
