@@ -12,6 +12,7 @@ import { parseManifest } from '../lib/parsers';
 import { addToHistory } from '../lib/utils/storage';
 import type { ManifestHistoryItem } from '../types/manifest';
 import { ErrorBoundary } from '../components/common/ErrorBoundary';
+import { ToastContainer } from '../components/common/Toast';
 
 function Viewer() {
   const manifest = useManifestStore((state) => state.manifest);
@@ -108,6 +109,9 @@ function Viewer() {
 
       {/* Quick Actions FAB */}
       {manifest && <QuickActions manifest={manifest} />}
+
+      {/* Toast Notifications */}
+      <ToastContainer />
     </div>
   );
 }
