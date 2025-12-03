@@ -3,6 +3,7 @@ import type { ParsedManifest } from '../../types/manifest';
 import { VariantList } from './VariantList';
 import { ABRLadder } from './ABRLadder';
 import { ValidationReport } from './ValidationReport';
+import { SegmentList } from './SegmentList';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -103,20 +104,7 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Segments Section (if present) */}
       {manifest.segments && manifest.segments.length > 0 && (
-        <section className="bg-white p-6 rounded-lg border border-gray-200">
-          <h2 className="text-lg font-semibold mb-4 text-gray-900">
-            Segments ({manifest.segments.length})
-          </h2>
-          <div className="text-sm text-gray-600">
-            <div>First segment: {manifest.segments[0].url}</div>
-            <div className="mt-2">
-              Average duration: {(
-                manifest.segments.reduce((sum, s) => sum + s.duration, 0) /
-                manifest.segments.length
-              ).toFixed(2)}s
-            </div>
-          </div>
-        </section>
+        <SegmentList segments={manifest.segments} />
       )}
     </div>
   );
