@@ -72,22 +72,23 @@ describe('simulatePlayback', () => {
 
     const result = simulatePlayback(mockVariants, profile, 10);
 
-    expect(result.switches.length).toBeGreaterThanOrEqual(0);
-    expect(result.totalSwitches).toBe(result.switches.length);
+    expect(result.switches.length).toBeGreaterThanOrEqual(1); // At least startup
+    expect(result.totalSwitches).toBe(0); // No quality switches for stable bandwidth
     expect(result.segments.length).toBeGreaterThan(0);
   });
 
   it('should detect quality switches when bandwidth changes', () => {
     const profile: BandwidthProfile = [
-      { time: 0, bandwidth: 3500000 },   // Should select v3
-      { time: 10, bandwidth: 1000000 },  // Should switch to v2
-      { time: 20, bandwidth: 400000 }    // Should switch to v1
+      { time: 0, bandwidth: 4000000 },   // Should select v3 (3M)
+      { time: 10, bandwidth: 2000000 },  // Should switch to v2 (1.5M) - 2M * 0.85 = 1.7M
+      { time: 20, bandwidth: 600000 }    // Should switch to v1 (500K) - 600K * 0.85 = 510K
     ];
 
     const result = simulatePlayback(mockVariants, profile, 10);
 
-    // Should have at least 2 switches
-    expect(result.totalSwitches).toBeGreaterThanOrEqual(2);
+    // Should have 3 switches total: startup + 2 quality switches
+    expect(result.switches.length).toBe(3);
+    expect(result.totalSwitches).toBe(2);
   });
 
   it('should track rebuffering when bandwidth is insufficient', () => {
