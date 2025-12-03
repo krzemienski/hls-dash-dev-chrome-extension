@@ -1,6 +1,12 @@
 // src/lib/message-router.ts
 import type { ExtensionMessage, ExtensionResponse } from '../types/messages';
 import { fetchManifestContent } from './fetchers/manifest-fetcher';
+import {
+  getDetectedManifests,
+  updateSettings,
+  clearHistory,
+  getSettings
+} from './utils/storage';
 
 export async function handleMessage(
   message: ExtensionMessage,
@@ -53,18 +59,61 @@ async function handleFetchManifest(url: string): Promise<ExtensionResponse<strin
   }
 }
 
-async function handleUpdateIgnoreList(_url: string, _ignore: boolean): Promise<ExtensionResponse> {
-  return { success: false, error: 'Not implemented' };
+async function handleUpdateIgnoreList(url: string, ignore: boolean): Promise<ExtensionResponse> {
+  try {
+    const settings = await getSettings();
+    if (ignore) {
+      if (!settings.ignoredUrls.includes(url)) {
+        settings.ignoredUrls.push(url);
+      }
+    } else {
+      settings.ignoredUrls = settings.ignoredUrls.filter((u: string) => u !== url);
+    }
+    await updateSettings({ ignoredUrls: settings.ignoredUrls });
+    return { success: true };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to update ignore list'
+    };
+  }
 }
 
-async function handleGetDetected(_tabId: number): Promise<ExtensionResponse> {
-  return { success: false, error: 'Not implemented' };
+async function handleGetDetected(tabId: number): Promise<ExtensionResponse> {
+  try {
+    const manifests = getDetectedManifests(tabId);
+    return {
+      success: true,
+      data: manifests
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to get detected manifests'
+    };
+  }
 }
 
-async function handleUpdateSettings(_settings: any): Promise<ExtensionResponse> {
-  return { success: false, error: 'Not implemented' };
+async function handleUpdateSettings(settings: any): Promise<ExtensionResponse> {
+  try {
+    await updateSettings(settings);
+    return { success: true };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to update settings'
+    };
+  }
 }
 
 async function handleClearHistory(): Promise<ExtensionResponse> {
-  return { success: false, error: 'Not implemented' };
+  try {
+    await clearHistory();
+    return { success: true };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to clear history'
+    };
+  }
 }
