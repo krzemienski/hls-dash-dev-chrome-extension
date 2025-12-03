@@ -1,5 +1,6 @@
 // src/components/viewer/ViewerHeader.tsx
 import { useManifestStore } from '../../store/manifest-store';
+import { ExportMenu } from './ExportMenu';
 
 export function ViewerHeader() {
   const manifest = useManifestStore((state) => state.manifest);
@@ -23,36 +24,40 @@ export function ViewerHeader() {
         </div>
 
         <div className="flex gap-2">
-          <button
-            onClick={() => setSelectedView('raw')}
-            className={`px-4 py-2 rounded ${
-              selectedView === 'raw'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            Raw
-          </button>
-          <button
-            onClick={() => setSelectedView('structured')}
-            className={`px-4 py-2 rounded ${
-              selectedView === 'structured'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            Structured
-          </button>
-          <button
-            onClick={() => setSelectedView('timeline')}
-            className={`px-4 py-2 rounded ${
-              selectedView === 'timeline'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            Timeline
-          </button>
+          <div className="flex gap-2 mr-4">
+            <button
+              onClick={() => setSelectedView('raw')}
+              className={`px-4 py-2 rounded ${
+                selectedView === 'raw'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              Raw
+            </button>
+            <button
+              onClick={() => setSelectedView('structured')}
+              className={`px-4 py-2 rounded ${
+                selectedView === 'structured'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              Structured
+            </button>
+            <button
+              onClick={() => setSelectedView('timeline')}
+              className={`px-4 py-2 rounded ${
+                selectedView === 'timeline'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              Timeline
+            </button>
+          </div>
+
+          <ExportMenu manifest={manifest} />
         </div>
       </div>
 

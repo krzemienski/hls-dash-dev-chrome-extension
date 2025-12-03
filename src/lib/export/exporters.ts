@@ -1,5 +1,5 @@
 // src/lib/export/exporters.ts
-import type { ParsedManifest, Variant } from '../../types/manifest';
+import type { ParsedManifest } from '../../types/manifest';
 
 /**
  * Export manifest to JSON format
