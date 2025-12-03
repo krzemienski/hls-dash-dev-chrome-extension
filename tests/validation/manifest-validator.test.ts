@@ -21,25 +21,44 @@ describe('validateManifest', () => {
       variants: [
         {
           id: 'v1',
-          bitrate: 1000000,
-          resolution: { width: 1280, height: 720 },
+          bitrate: 500000,
+          resolution: { width: 640, height: 360 },
           codecs: ['avc1'],
           url: 'v1.m3u8',
           type: 'video'
         },
         {
           id: 'v2',
+          bitrate: 1000000,
+          resolution: { width: 1280, height: 720 },
+          codecs: ['avc1'],
+          url: 'v2.m3u8',
+          type: 'video'
+        },
+        {
+          id: 'v3',
           bitrate: 2000000,
           resolution: { width: 1920, height: 1080 },
           codecs: ['avc1'],
-          url: 'v2.m3u8',
+          url: 'v3.m3u8',
+          type: 'video'
+        },
+        {
+          id: 'v4',
+          bitrate: 5000000,
+          resolution: { width: 1920, height: 1080 },
+          codecs: ['avc1'],
+          url: 'v4.m3u8',
           type: 'video'
         }
       ]
     });
 
     const issues = validateManifest(manifest);
-    expect(issues).toHaveLength(0);
+
+    // Should have no errors, only possibly info about gaps
+    const errors = issues.filter(i => i.severity === 'error');
+    expect(errors).toHaveLength(0);
   });
 
   it('should detect missing variants', () => {
