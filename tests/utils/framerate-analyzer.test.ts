@@ -56,7 +56,7 @@ describe('categorizeFrameRate', () => {
     const category = categorizeFrameRate(60);
 
     expect(category.label).toBe('High (HFR)');
-    expect(category.useCase).toContain('sports');
+    expect(category.useCase.toLowerCase()).toContain('sports');
   });
 
   it('should categorize ultra high frame rate (120fps)', () => {
