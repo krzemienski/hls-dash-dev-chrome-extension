@@ -1,5 +1,5 @@
 // src/lib/validation/manifest-validator.ts
-import type { ParsedManifest, Variant } from '../../types/manifest';
+import type { ParsedManifest } from '../../types/manifest';
 
 export interface ValidationIssue {
   severity: 'error' | 'warning' | 'info';

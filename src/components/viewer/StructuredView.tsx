@@ -2,6 +2,7 @@
 import type { ParsedManifest } from '../../types/manifest';
 import { VariantList } from './VariantList';
 import { ABRLadder } from './ABRLadder';
+import { ValidationReport } from './ValidationReport';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -10,6 +11,9 @@ interface StructuredViewProps {
 export function StructuredView({ manifest }: StructuredViewProps) {
   return (
     <div className="space-y-6">
+      {/* Validation Report */}
+      <ValidationReport manifest={manifest} />
+
       {/* Metadata Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
         <h2 className="text-lg font-semibold mb-4 text-gray-900">Metadata</h2>
