@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="urn:mpeg:dash:schema:mpd:2011"
+  xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd"
+  type="static"
+  mediaPresentationDuration="PT634.566S"
+  minBufferTime="PT2.00S"
+  profiles="urn:mpeg:dash:profile:isoff-live:2011">
+  <Period>
+    <AdaptationSet mimeType="video/mp4" codecs="avc1.4d401f" width="854" height="480" frameRate="24" segmentAlignment="true" startWithSAP="1">
+      <Representation id="0" bandwidth="1000000">
+        <BaseURL>video/1000k/</BaseURL>
+        <SegmentTemplate timescale="24" initialization="init.mp4" media="seg-$Number$.m4s" startNumber="1" duration="96"/>
+      </Representation>
+      <Representation id="1" bandwidth="2000000">
+        <BaseURL>video/2000k/</BaseURL>
+        <SegmentTemplate timescale="24" initialization="init.mp4" media="seg-$Number$.m4s" startNumber="1" duration="96"/>
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet mimeType="audio/mp4" codecs="mp4a.40.2" lang="en" segmentAlignment="true" startWithSAP="1">
+      <Representation id="audio-en" bandwidth="128000">
+        <BaseURL>audio/en/</BaseURL>
+        <SegmentTemplate timescale="48000" initialization="init.mp4" media="seg-$Number$.m4s" startNumber="1" duration="96000"/>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>
