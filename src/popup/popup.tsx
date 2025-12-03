@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import '../styles/globals.css';
 import type { DetectedManifest } from '../types/manifest';
 import { HistoryTab } from '../components/popup/HistoryTab';
+import { SettingsTab } from '../components/popup/SettingsTab';
 
 function Popup() {
   const [detectedManifests, setDetectedManifests] = useState<DetectedManifest[]>([]);
@@ -120,9 +121,7 @@ function Popup() {
         )}
 
         {activeTab === 'settings' && (
-          <div className="p-4 text-center text-gray-500">
-            Settings view coming soon...
-          </div>
+          <SettingsTab />
         )}
       </div>
 
