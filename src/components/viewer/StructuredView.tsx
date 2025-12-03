@@ -8,6 +8,7 @@ import { BitrateChart } from './BitrateChart';
 import { CodecInfoPanel } from './CodecInfoPanel';
 import { BandwidthCalculator } from './BandwidthCalculator';
 import { StatsDashboard } from './StatsDashboard';
+import { UrlInfoPanel } from './UrlInfoPanel';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -21,6 +22,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Statistics Dashboard */}
       <StatsDashboard manifest={manifest} />
+
+      {/* URL Analysis */}
+      <UrlInfoPanel manifest={manifest} />
 
       {/* Metadata Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
