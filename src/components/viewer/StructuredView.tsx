@@ -14,6 +14,7 @@ import { PerformanceMetrics } from './PerformanceMetrics';
 import { VariantComparison } from './VariantComparison';
 import { ResolutionAnalysis } from './ResolutionAnalysis';
 import { FrameRateAnalysis } from './FrameRateAnalysis';
+import { ProtocolInfoPanel } from './ProtocolInfoPanel';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -30,6 +31,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* URL Analysis */}
       <UrlInfoPanel manifest={manifest} />
+
+      {/* Protocol Information */}
+      <ProtocolInfoPanel manifest={manifest} />
 
       {/* Metadata Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
