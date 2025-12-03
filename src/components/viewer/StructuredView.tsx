@@ -4,6 +4,7 @@ import { VariantList } from './VariantList';
 import { ABRLadder } from './ABRLadder';
 import { ValidationReport } from './ValidationReport';
 import { SegmentList } from './SegmentList';
+import { BitrateChart } from './BitrateChart';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -93,6 +94,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* ABR Ladder Analysis */}
       <ABRLadder manifest={manifest} />
+
+      {/* Bitrate Chart */}
+      <BitrateChart variants={manifest.variants} />
 
       {/* Variants Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
