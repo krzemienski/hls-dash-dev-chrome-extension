@@ -15,6 +15,7 @@ import { VariantComparison } from './VariantComparison';
 import { ResolutionAnalysis } from './ResolutionAnalysis';
 import { FrameRateAnalysis } from './FrameRateAnalysis';
 import { ProtocolInfoPanel } from './ProtocolInfoPanel';
+import { DRMInfoPanel } from './DRMInfoPanel';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -34,6 +35,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Protocol Information */}
       <ProtocolInfoPanel manifest={manifest} />
+
+      {/* DRM Information */}
+      <DRMInfoPanel manifest={manifest} />
 
       {/* Metadata Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
