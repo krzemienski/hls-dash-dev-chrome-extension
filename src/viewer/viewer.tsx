@@ -22,12 +22,30 @@ function Viewer() {
   const setManifest = useManifestStore((state) => state.setManifest);
   const setLoading = useManifestStore((state) => state.setLoading);
   const setError = useManifestStore((state) => state.setError);
+  const setEntryPoint = useManifestStore((state) => state.setEntryPoint);
+  const setViewMode = useManifestStore((state) => state.setViewMode);
 
   // Auto-load manifest from URL hash
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     if (hash) {
       const url = decodeURIComponent(hash);
+
+      // NEW v1.1.0: Detect entry point
+      const referrer = document.referrer;
+      const isFromExtension = referrer.includes('popup.html') ||
+                              referrer.includes('panel.html') ||
+                              referrer.includes('devtools.html');
+      const entryPoint = isFromExtension ? 'manual' : 'interception';
+
+      setEntryPoint(entryPoint);
+
+      // Set default mode based on entry point
+      const defaultMode = entryPoint === 'interception' ? 'spec' : 'analysis';
+      setViewMode(defaultMode);
+
+      console.log(`[v1.1.0] Entry point: ${entryPoint}, Default mode: ${defaultMode}`);
+
       loadManifest(url);
     }
   }, []);

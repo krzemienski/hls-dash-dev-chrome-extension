@@ -1,0 +1,402 @@
+{
+  "hls": {
+    "live": [
+      {
+        "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8",
+        "source": "Akamai Live Test Stream",
+        "description": "Tears of Steel LIVE stream - 1920x800 max resolution"
+      },
+      {
+        "url": "https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8",
+        "source": "Akamai CDN",
+        "description": "Akamai live stream example"
+      },
+      {
+        "url": "https://skynewsau-live.akamaized.net/hls/live/2002689/skynewsau-extra1/master.m3u8",
+        "source": "Sky News Australia (Akamai)",
+        "description": "Sky News LIVE stream - 960x540 max resolution"
+      },
+      {
+        "url": "https://nasa-i.akamaihd.net/hls/live/253565/NTV-Public1/master.m3u8",
+        "source": "NASA Live",
+        "description": "NASA TV Public Channel - Live broadcast stream"
+      },
+      {
+        "url": "https://stream-akamai.castr.com/5b9352dbda7b8c769937e459/live_2361c920455111ea85db6911fe397b9e/index.fmp4.m3u8",
+        "source": "Castr / Akamai",
+        "description": "Castr live stream with fMP4 segments"
+      }
+    ],
+    "vod": [
+      {
+        "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8",
+        "source": "Apple Developer Documentation",
+        "description": "Basic 16x9 HLS stream - H.264 at 30Hz with 5 video variants"
+      },
+      {
+        "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+        "source": "Mux Test Streams",
+        "description": "Big Buck Bunny - Multi-bitrate VOD, 5 renditions"
+      },
+      {
+        "url": "https://test-streams.mux.dev/tos_ismc/main.m3u8",
+        "source": "Mux Test Streams",
+        "description": "Tears of Steel - Multi-bitrate VOD with IMSC captions"
+      },
+      {
+        "url": "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+        "source": "Akamai/Bitmovin",
+        "description": "Parkour - Multi-bitrate VOD stream"
+      },
+      {
+        "url": "https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8",
+        "source": "JW Player Test Content",
+        "description": "JW Player platform test stream - multi-bitrate Tears of Steel"
+      },
+      {
+        "url": "https://www.tutorialspoint.com/videos/sample720.m3u8",
+        "source": "TutorialsPoint",
+        "description": "Educational sample video, 720p single bitrate"
+      },
+      {
+        "url": "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8",
+        "source": "Apple Developer Examples (Legacy)",
+        "description": "BipBop All - Classic Apple test stream, master playlist"
+      },
+      {
+        "url": "https://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8",
+        "source": "Apple EdgeSuite",
+        "description": "Classic Apple HLS test stream (HTTPS)"
+      }
+    ],
+    "encrypted": [
+      {
+        "url": "https://cdn.bitmovin.com/content/assets/art-of-motion_drm/m3u8s/11331.m3u8",
+        "source": "Bitmovin DRM Test Assets",
+        "description": "Art of Motion with FairPlay DRM protection",
+        "drmSystem": "FairPlay"
+      }
+    ],
+    "4k": [
+      {
+        "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8",
+        "source": "Apple Developer - Advanced Examples",
+        "description": "Advanced Dolby Vision + Atmos - H.264/HEVC variants up to 4K"
+      },
+      {
+        "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/historic_planet_content_2023-10-26-3d-video/main.m3u8",
+        "source": "Apple Developer - Spatial Video Examples",
+        "description": "Historic Planet 3D Video - MV-HEVC/UHD/Dolby Vision"
+      },
+      {
+        "url": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "source": "Akamai/Bitmovin",
+        "description": "Sintel - Multi-bitrate VOD up to 4K (4096x1744)"
+      },
+      {
+        "url": "https://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8",
+        "source": "Vodobox",
+        "description": "Skate Phantom Flex - 4K UHD (3840x2160) VOD"
+      }
+    ],
+    "hevc": [
+      {
+        "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8",
+        "source": "Apple Developer - HEVC Examples",
+        "description": "Advanced HEVC/H.264 example with multiple codecs at 30/60Hz"
+      }
+    ],
+    "multi_audio": [
+      {
+        "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8",
+        "source": "Apple Developer - Advanced Examples",
+        "description": "Multiple audio tracks with Dolby Atmos"
+      },
+      {
+        "url": "https://cdn.bitmovin.com/content/assets/sintel/hls/playlist.m3u8",
+        "source": "Bitmovin CDN",
+        "description": "Sintel with multi-language audio tracks"
+      },
+      {
+        "url": "http://d3rlna7iyyu8wu.cloudfront.net/skip_armstrong/skip_armstrong_multichannel_subs.m3u8",
+        "source": "Dolby Test Streams (via CloudFront)",
+        "description": "Dolby multichannel surround sound"
+      }
+    ],
+    "subtitles": [
+      {
+        "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8",
+        "source": "Apple Developer Documentation",
+        "description": "Stream with closed captions"
+      },
+      {
+        "url": "http://playertest.longtailvideo.com/adaptive/captions/playlist.m3u8",
+        "source": "Longtail Video/JW Player",
+        "description": "Test stream with CEA-608 closed captions"
+      },
+      {
+        "url": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "source": "Akamai/Bitmovin",
+        "description": "Sintel with multiple subtitle tracks"
+      },
+      {
+        "url": "http://d3rlna7iyyu8wu.cloudfront.net/skip_armstrong/skip_armstrong_stereo_subs.m3u8",
+        "source": "Dolby Test Streams",
+        "description": "Dolby stereo content with subtitles"
+      }
+    ],
+    "advanced_features": [
+      {
+        "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
+        "source": "Apple Developer - fMP4 Examples",
+        "description": "fMP4 format with I-Frame support",
+        "feature": "fmp4"
+      },
+      {
+        "url": "https://test-streams.mux.dev/dai-discontinuity-deltatre/manifest.m3u8",
+        "source": "Mux Test Streams",
+        "description": "Ad-insertion discontinuity test",
+        "feature": "ad-insertion"
+      },
+      {
+        "url": "http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8",
+        "source": "Wowza/JW Player",
+        "description": "ID3 metadata test stream",
+        "feature": "id3-metadata"
+      },
+      {
+        "url": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8",
+        "source": "Bitmovin",
+        "description": "VR 360-degree video",
+        "feature": "vr-360"
+      },
+      {
+        "url": "https://customer-f33zs165nr7gyfy4.cloudflarestream.com/6b9e68b07dfee8cc2d116e4c51d6a957/manifest/video.m3u8",
+        "source": "Cloudflare Stream CDN",
+        "description": "Low-latency HLS capable",
+        "feature": "ll-hls"
+      }
+    ]
+  },
+  "dash": {
+    "live": [
+      {
+        "url": "https://livesim2.dashif.org/livesim2/chunkdur_1/ato_7/testpic4_8s/Manifest.mpd",
+        "source": "DASH-IF Live Simulator",
+        "description": "Live synthetic stream, 8-second test pattern"
+      },
+      {
+        "url": "https://livesim.dashif.org/livesim/chunkdur_1/ato_7/testpic4_8s/Manifest.mpd",
+        "source": "DASH-IF LiveSim2",
+        "description": "Low Latency Chunked Single-Bitrate, AVC and AAC"
+      }
+    ],
+    "vod": [
+      {
+        "url": "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
+        "source": "Akamai CDN",
+        "description": "Big Buck Bunny - Multi-bitrate, 30fps, up to 1080p"
+      },
+      {
+        "url": "https://cdn.bitmovin.com/content/assets/sintel/sintel.mpd",
+        "source": "Bitmovin CDN",
+        "description": "Sintel - Multi-bitrate up to 1080p"
+      },
+      {
+        "url": "https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
+        "source": "Bitmovin",
+        "description": "Parkour/Art of Motion - Multi-bitrate test content"
+      },
+      {
+        "url": "http://ftp.itec.aau.at/datasets/DASHDataset2014/BigBuckBunny/2sec/BigBuckBunny_2s_onDemand_2014_05_09.mpd",
+        "source": "ITEC AAU University Dataset",
+        "description": "Big Buck Bunny - 2-second segments, 15 quality representations"
+      },
+      {
+        "url": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
+        "source": "Bento4 Sample Content",
+        "description": "Tears of Steel - Multi-stream, multiple resolutions"
+      },
+      {
+        "url": "http://www.bok.net/dash/tears_of_steel/cleartext/stream-single.mpd",
+        "source": "Bento4 Sample Content",
+        "description": "Tears of Steel - Single-stream variant"
+      }
+    ],
+    "encrypted": [
+      {
+        "url": "https://cdn.bitmovin.com/content/assets/art-of-motion_drm/mpds/11331.mpd",
+        "source": "Bitmovin CDN",
+        "description": "Art of Motion - Widevine DRM protected",
+        "drmSystem": "Widevine"
+      },
+      {
+        "url": "https://test.playready.microsoft.com/media/dash/BBBAV1/manifest.mpd",
+        "source": "Microsoft PlayReady Test",
+        "description": "Big Buck Bunny - AV1 codec with PlayReady DRM",
+        "drmSystem": "PlayReady"
+      }
+    ],
+    "4k": [
+      {
+        "url": "https://dash.akamaized.net/dash264/TestCasesUHD/2b/11/MultiRate.mpd",
+        "source": "DASH-IF Akamai - UHD Test Cases",
+        "description": "UHD 4K, 10-bit SDR, multi-rate"
+      }
+    ],
+    "hevc": [
+      {
+        "url": "https://dash.akamaized.net/dash264/TestCasesHEVC/1a/1/TOS_OnDemand_HEVC_MultiRate.mpd",
+        "source": "DASH-IF Akamai - HEVC Test Cases",
+        "description": "Tears of Steel - HEVC Multi-Rate OnDemand"
+      },
+      {
+        "url": "https://dash.akamaized.net/dash264/TestCasesHEVC/1a/2/BBB_OnDemand_HEVC_MultiRate.mpd",
+        "source": "DASH-IF Akamai - HEVC Test Cases",
+        "description": "Big Buck Bunny - HEVC Multi-Rate OnDemand"
+      }
+    ],
+    "multi_audio": [
+      {
+        "url": "https://dash.akamaized.net/dash264/TestCasesMCA/fraunhofer/MPEGH_51/1/sintel_audio_video_mpegh_5_1_brs_sidx.mpd",
+        "source": "DASH-IF Akamai - Fraunhofer MPEG-H Audio",
+        "description": "Sintel with MPEG-H Audio 5.1 multichannel"
+      },
+      {
+        "url": "http://dash.akamaized.net/dash264/TestCasesMCA/fraunhofer/HE-AACv2_Multichannel/1/6chID/6chId_480p_single_adapt_heaac5_1_sidx.mpd",
+        "source": "DASH-IF Akamai - Fraunhofer Audio",
+        "description": "HE-AACv2 5.1 Multichannel Audio with 480p video"
+      },
+      {
+        "url": "http://amssamples.streaming.mediaservices.windows.net/f1ee994f-fcb8-455f-a15d-07f6f2081a60/Sintel_MultiAudio.ism/manifest(format=mpd-time-csf)",
+        "source": "Azure Media Services",
+        "description": "Sintel - Multiple audio tracks, multi-bitrate"
+      },
+      {
+        "url": "http://amssamples.streaming.mediaservices.windows.net/55034fb3-11af-43e4-a4de-d1b3ca56c5aa/ElephantsDream_MultiAudio.ism/manifest(format=mpd-time-csf)",
+        "source": "Azure Media Services",
+        "description": "Elephants Dream - Multiple audio tracks"
+      }
+    ],
+    "advanced_features": [
+      {
+        "url": "https://dash.akamaized.net/dash264/TestCasesIOP33/adapatationSetSwitching/5/manifest.mpd",
+        "source": "DASH-IF Akamai IOP33",
+        "description": "Adaptation set switching test case",
+        "feature": "adaptation-set-switching"
+      },
+      {
+        "url": "http://media.developer.dolby.com/DolbyVision_Atmos/profile8.1_DASH/p8.1.mpd",
+        "source": "Dolby Developer Portal",
+        "description": "Dolby Vision HDR Profile 8.1 with Dolby Atmos",
+        "feature": "dolby-vision-atmos"
+      },
+      {
+        "url": "http://d3rlna7iyyu8wu.cloudfront.net/DolbyVision_Atmos/profile8.1_DASH/p8.1.mpd",
+        "source": "Dolby via CloudFront CDN",
+        "description": "Dolby Vision DASH with Atmos audio",
+        "feature": "dolby-vision-atmos"
+      },
+      {
+        "url": "http://d3rlna7iyyu8wu.cloudfront.net/Atmos/DASH/universe_fury_DASH/Universe_Fury_10000000.mpd",
+        "source": "Dolby via CloudFront",
+        "description": "Universe Fury - Dolby Atmos H.264",
+        "feature": "dolby-atmos"
+      },
+      {
+        "url": "http://d3rlna7iyyu8wu.cloudfront.net/Atmos/DASH/dolby_shattered_DASH/Shattered_10000000.mpd",
+        "source": "Dolby via CloudFront",
+        "description": "Shattered - Dolby Atmos H.264",
+        "feature": "dolby-atmos"
+      },
+      {
+        "url": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd",
+        "source": "Bitmovin",
+        "description": "Playhouse VR - 360-degree video content",
+        "feature": "vr-360"
+      },
+      {
+        "url": "http://lab.eyevinn.technology/webm/exodus.mpd",
+        "source": "Eyevinn Technology Lab",
+        "description": "Exodus - VP9/WebM codec with HDR support",
+        "feature": "vp9-hdr"
+      },
+      {
+        "url": "http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd",
+        "source": "BBC R&D",
+        "description": "BBC Test Card with diagnostic events",
+        "feature": "events"
+      },
+      {
+        "url": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.mpd",
+        "source": "Unified Streaming",
+        "description": "Tears of Steel - ISM format conversion",
+        "feature": "ism-conversion"
+      }
+    ],
+    "standard_test_content": [
+      {
+        "url": "https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/1/MultiResMPEG2.mpd",
+        "source": "DASH-IF Akamai",
+        "description": "AVC Multi-Resolution Multi-Rate with SegmentTimeline"
+      },
+      {
+        "url": "https://dash.akamaized.net/dash264/TestCasesHD/2b/qualcomm/1/MultiResMPEG2.mpd",
+        "source": "DASH-IF Akamai",
+        "description": "AVC Multi-Resolution Multi-Rate up to 1080p"
+      },
+      {
+        "url": "https://dash.akamaized.net/dash264/TestCases/1b/qualcomm/1/MultiRatePatched.mpd",
+        "source": "DASH-IF Akamai",
+        "description": "AVC Single-Resolution Multi-Rate"
+      },
+      {
+        "url": "http://dash.akamaized.net/dash264/TestCases/3b/fraunhofer/aac-lc_stereo_with_video/ElephantsDream/elephants_dream_480p_aaclc_stereo_sidx.mpd",
+        "source": "DASH-IF Akamai - Fraunhofer",
+        "description": "Elephants Dream - 480p with AAC-LC stereo"
+      }
+    ]
+  },
+  "summary": {
+    "total_urls": 62,
+    "hls_total": 33,
+    "dash_total": 29,
+    "by_category": {
+      "hls": {
+        "live": 5,
+        "vod": 28,
+        "encrypted": 1,
+        "4k": 4,
+        "hevc": 1,
+        "multi_audio": 3,
+        "subtitles": 4,
+        "advanced_features": 5
+      },
+      "dash": {
+        "live": 2,
+        "vod": 27,
+        "encrypted": 2,
+        "4k": 1,
+        "hevc": 2,
+        "multi_audio": 4,
+        "advanced_features": 9,
+        "standard_test_content": 4
+      }
+    },
+    "coverage": {
+      "live_streaming": true,
+      "vod_streaming": true,
+      "4k_uhd": true,
+      "hdr_dolby_vision": true,
+      "hevc_codec": true,
+      "av1_codec": true,
+      "vp9_codec": true,
+      "drm_encryption": true,
+      "multi_audio": true,
+      "subtitles": true,
+      "vr_360": true,
+      "ad_insertion": true,
+      "low_latency": true
+    }
+  }
+}

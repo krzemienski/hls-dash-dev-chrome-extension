@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "HLS + DASH Manifest Viewer Pro",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "View and analyze HLS (M3U8) and DASH (MPD) streaming manifests with ABR visualization, variant comparison, and playback simulation.",
 
   "permissions": [

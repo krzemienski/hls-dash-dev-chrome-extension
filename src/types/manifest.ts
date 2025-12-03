@@ -1,4 +1,5 @@
 // src/types/manifest.ts
+import type { ValidationResult, SegmentAvailability } from './validation';
 
 export type ManifestFormat = 'hls' | 'dash';
 export type ManifestType = 'VOD' | 'LIVE' | 'EVENT';
@@ -11,6 +12,9 @@ export interface ParsedManifest {
   variants: Variant[];
   metadata: ManifestMetadata;
   segments?: Segment[];
+  // NEW v1.1.0 fields
+  validation?: ValidationResult;
+  segmentAvailability?: SegmentAvailability;
 }
 
 export interface Variant {

@@ -1,0 +1,272 @@
+[
+  {
+    "url": "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
+    "source": "Akamai CDN",
+    "description": "Big Buck Bunny - VOD, multi-bitrate, 30fps, up to 1080p",
+    "category": "vod",
+    "features": ["multi-bitrate", "1080p"],
+    "profile": "isoff-live",
+    "drm": "clear"
+  },
+  {
+    "url": "https://livesim2.dashif.org/livesim2/chunkdur_1/ato_7/testpic4_8s/Manifest.mpd",
+    "source": "DASH-IF Live Simulator",
+    "description": "Live synthetic stream from VoD asset, 8-second test pattern",
+    "category": "live",
+    "features": ["live", "synthetic", "low-latency"],
+    "profile": "isoff-live",
+    "drm": "clear"
+  },
+  {
+    "url": "https://livesim.dashif.org/livesim/chunkdur_1/ato_7/testpic4_8s/Manifest.mpd",
+    "source": "DASH-IF LiveSim2",
+    "description": "Low Latency Chunked Single-Bitrate, AVC and AAC, 8s segments",
+    "category": "live",
+    "features": ["live", "low-latency"],
+    "profile": "isoff-live",
+    "drm": "clear"
+  },
+  {
+    "url": "https://dash.akamaized.net/dash264/TestCasesUHD/2b/11/MultiRate.mpd",
+    "source": "DASH-IF Akamai - UHD Test Cases",
+    "description": "UHD 4K, 10-bit SDR, multi-rate",
+    "category": "vod",
+    "features": ["4k", "10-bit", "multi-bitrate"],
+    "profile": "isoff-live",
+    "drm": "clear"
+  },
+  {
+    "url": "https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/1/MultiResMPEG2.mpd",
+    "source": "DASH-IF Akamai",
+    "description": "AVC Multi-Resolution Multi-Rate with SegmentTimeline",
+    "category": "vod",
+    "features": ["multi-bitrate", "multi-resolution", "segment-timeline"],
+    "profile": "isoff-live",
+    "drm": "clear"
+  },
+  {
+    "url": "https://dash.akamaized.net/dash264/TestCasesHD/2b/qualcomm/1/MultiResMPEG2.mpd",
+    "source": "DASH-IF Akamai",
+    "description": "AVC Multi-Resolution Multi-Rate up to 1080p",
+    "category": "vod",
+    "features": ["1080p", "multi-bitrate"],
+    "profile": "isoff-live",
+    "drm": "clear"
+  },
+  {
+    "url": "https://dash.akamaized.net/dash264/TestCases/1b/qualcomm/1/MultiRatePatched.mpd",
+    "source": "DASH-IF Akamai",
+    "description": "AVC Single-Resolution Multi-Rate",
+    "category": "vod",
+    "features": ["multi-bitrate"],
+    "profile": "isoff-live",
+    "drm": "clear"
+  },
+  {
+    "url": "https://dash.akamaized.net/dash264/TestCasesIOP33/adapatationSetSwitching/5/manifest.mpd",
+    "source": "DASH-IF Akamai IOP33",
+    "description": "Adaptation set switching test case",
+    "category": "vod",
+    "features": ["adaptation-set-switching"],
+    "profile": "isoff-live",
+    "drm": "clear"
+  },
+  {
+    "url": "https://dash.akamaized.net/dash264/TestCasesHEVC/1a/1/TOS_OnDemand_HEVC_MultiRate.mpd",
+    "source": "DASH-IF Akamai - HEVC Test Cases",
+    "description": "Tears of Steel - HEVC Multi-Rate OnDemand",
+    "category": "vod",
+    "features": ["hevc", "multi-bitrate"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "https://dash.akamaized.net/dash264/TestCasesHEVC/1a/2/BBB_OnDemand_HEVC_MultiRate.mpd",
+    "source": "DASH-IF Akamai - HEVC Test Cases",
+    "description": "Big Buck Bunny - HEVC Multi-Rate OnDemand",
+    "category": "vod",
+    "features": ["hevc", "multi-bitrate"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "https://dash.akamaized.net/dash264/TestCasesMCA/fraunhofer/MPEGH_51/1/sintel_audio_video_mpegh_5_1_brs_sidx.mpd",
+    "source": "DASH-IF Akamai - Fraunhofer MPEG-H Audio",
+    "description": "Sintel with MPEG-H Audio 5.1 multichannel",
+    "category": "vod",
+    "features": ["mpeg-h-audio", "surround-5.1"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://dash.akamaized.net/dash264/TestCasesMCA/fraunhofer/HE-AACv2_Multichannel/1/6chID/6chId_480p_single_adapt_heaac5_1_sidx.mpd",
+    "source": "DASH-IF Akamai - Fraunhofer Audio",
+    "description": "HE-AACv2 5.1 Multichannel Audio with 480p video",
+    "category": "vod",
+    "features": ["he-aac", "surround-5.1"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://dash.akamaized.net/dash264/TestCases/3b/fraunhofer/aac-lc_stereo_with_video/ElephantsDream/elephants_dream_480p_aaclc_stereo_sidx.mpd",
+    "source": "DASH-IF Akamai - Fraunhofer",
+    "description": "Elephants Dream - 480p with AAC-LC stereo audio",
+    "category": "vod",
+    "features": ["aac-lc", "stereo"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "https://cdn.bitmovin.com/content/assets/sintel/sintel.mpd",
+    "source": "Bitmovin CDN",
+    "description": "Sintel - Multi-bitrate VOD up to 1080p",
+    "category": "vod",
+    "features": ["multi-bitrate", "1080p"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "https://cdn.bitmovin.com/content/assets/art-of-motion_drm/mpds/11331.mpd",
+    "source": "Bitmovin CDN",
+    "description": "Art of Motion - DRM-protected with Widevine",
+    "category": "vod",
+    "features": ["encrypted", "widevine"],
+    "profile": "isoff-on-demand",
+    "drm": "widevine"
+  },
+  {
+    "url": "https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
+    "source": "Bitmovin",
+    "description": "Parkour/Art of Motion - Multi-bitrate test content",
+    "category": "vod",
+    "features": ["multi-bitrate"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd",
+    "source": "Bitmovin",
+    "description": "Playhouse VR - 360-degree video content",
+    "category": "vod",
+    "features": ["vr-360"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://media.developer.dolby.com/DolbyVision_Atmos/profile8.1_DASH/p8.1.mpd",
+    "source": "Dolby Developer Portal",
+    "description": "Dolby Vision HDR Profile 8.1 with Dolby Atmos audio",
+    "category": "vod",
+    "features": ["dolby-vision", "dolby-atmos", "hdr"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://d3rlna7iyyu8wu.cloudfront.net/DolbyVision_Atmos/profile8.1_DASH/p8.1.mpd",
+    "source": "Dolby via CloudFront CDN",
+    "description": "Dolby Vision DASH with Atmos audio (CloudFront hosted)",
+    "category": "vod",
+    "features": ["dolby-vision", "dolby-atmos", "hdr"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://d3rlna7iyyu8wu.cloudfront.net/Atmos/DASH/universe_fury_DASH/Universe_Fury_10000000.mpd",
+    "source": "Dolby via CloudFront",
+    "description": "Universe Fury - Dolby Atmos H.264",
+    "category": "vod",
+    "features": ["dolby-atmos", "surround"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://d3rlna7iyyu8wu.cloudfront.net/Atmos/DASH/dolby_shattered_DASH/Shattered_10000000.mpd",
+    "source": "Dolby via CloudFront",
+    "description": "Shattered - Dolby Atmos H.264",
+    "category": "vod",
+    "features": ["dolby-atmos"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://ftp.itec.aau.at/datasets/DASHDataset2014/BigBuckBunny/2sec/BigBuckBunny_2s_onDemand_2014_05_09.mpd",
+    "source": "ITEC AAU University Dataset",
+    "description": "Big Buck Bunny - 2-second segments, 15 quality representations",
+    "category": "vod",
+    "features": ["multi-bitrate", "research-dataset"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd",
+    "source": "BBC R&D",
+    "description": "BBC Test Card with diagnostic events and timing cues",
+    "category": "vod",
+    "features": ["test-pattern", "events"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "https://test.playready.microsoft.com/media/dash/BBBAV1/manifest.mpd",
+    "source": "Microsoft PlayReady Test",
+    "description": "Big Buck Bunny - AV1 codec with PlayReady DRM",
+    "category": "vod",
+    "features": ["av1-codec", "encrypted", "playready"],
+    "profile": "isoff-on-demand",
+    "drm": "playready"
+  },
+  {
+    "url": "http://lab.eyevinn.technology/webm/exodus.mpd",
+    "source": "Eyevinn Technology Lab",
+    "description": "Exodus - VP9/WebM codec with HDR support",
+    "category": "vod",
+    "features": ["vp9-codec", "webm", "hdr"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://amssamples.streaming.mediaservices.windows.net/f1ee994f-fcb8-455f-a15d-07f6f2081a60/Sintel_MultiAudio.ism/manifest(format=mpd-time-csf)",
+    "source": "Azure Media Services",
+    "description": "Sintel - Multiple audio tracks, multi-bitrate",
+    "category": "vod",
+    "features": ["multi-audio", "multi-language"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://amssamples.streaming.mediaservices.windows.net/55034fb3-11af-43e4-a4de-d1b3ca56c5aa/ElephantsDream_MultiAudio.ism/manifest(format=mpd-time-csf)",
+    "source": "Azure Media Services",
+    "description": "Elephants Dream - Multiple audio tracks",
+    "category": "vod",
+    "features": ["multi-audio"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
+    "source": "Bento4 Sample Content",
+    "description": "Tears of Steel - Multi-stream, multiple resolutions",
+    "category": "vod",
+    "features": ["multi-bitrate", "multi-resolution"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "http://www.bok.net/dash/tears_of_steel/cleartext/stream-single.mpd",
+    "source": "Bento4 Sample Content",
+    "description": "Tears of Steel - Single-stream variant",
+    "category": "vod",
+    "features": ["simple"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  },
+  {
+    "url": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.mpd",
+    "source": "Unified Streaming",
+    "description": "Tears of Steel - ISM format conversion to DASH",
+    "category": "vod",
+    "features": ["ism-conversion", "multi-bitrate"],
+    "profile": "isoff-on-demand",
+    "drm": "clear"
+  }
+]

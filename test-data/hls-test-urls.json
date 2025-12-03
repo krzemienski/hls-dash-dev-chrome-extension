@@ -1,0 +1,274 @@
+[
+  {
+    "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8",
+    "source": "Apple Developer Documentation",
+    "description": "Basic 16x9 HLS stream - H.264 at 30Hz with 5 video variants and closed captions",
+    "category": "vod",
+    "features": ["multi-bitrate", "subtitles"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8",
+    "source": "Apple Developer - HEVC Examples",
+    "description": "Advanced HEVC/H.264 example with multiple codecs at 30/60Hz",
+    "category": "vod",
+    "features": ["hevc", "multi-bitrate", "60fps"],
+    "hlsVersion": "6"
+  },
+  {
+    "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
+    "source": "Apple Developer - fMP4 Examples",
+    "description": "Advanced fMP4 stream with 8 video variants (480p-1080p), I-Frame support",
+    "category": "vod",
+    "features": ["fmp4", "multi-bitrate", "i-frame"],
+    "hlsVersion": "7"
+  },
+  {
+    "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8",
+    "source": "Apple Developer - TS Examples",
+    "description": "Advanced MPEG-TS container format with multiple variants and I-Frame support",
+    "category": "vod",
+    "features": ["mpegts", "multi-bitrate", "i-frame"],
+    "hlsVersion": "4"
+  },
+  {
+    "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8",
+    "source": "Apple Developer - Advanced Examples",
+    "description": "Advanced Dolby Vision + Atmos - H.264/HEVC variants up to 4K",
+    "category": "vod",
+    "features": ["4k", "dolby-vision", "dolby-atmos", "multi-audio"],
+    "hlsVersion": "7"
+  },
+  {
+    "url": "https://devstreaming-cdn.apple.com/videos/streaming/examples/historic_planet_content_2023-10-26-3d-video/main.m3u8",
+    "source": "Apple Developer - Spatial Video Examples",
+    "description": "Historic Planet 3D Video - MV-HEVC/UHD/Dolby Vision",
+    "category": "vod",
+    "features": ["4k", "3d-video", "mv-hevc", "dolby-vision"],
+    "hlsVersion": "7"
+  },
+  {
+    "url": "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8",
+    "source": "Apple Developer Examples (Legacy)",
+    "description": "BipBop All - Classic Apple test stream, master playlist",
+    "category": "vod",
+    "features": ["legacy", "multi-bitrate"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8",
+    "source": "Apple Developer Examples (Legacy)",
+    "description": "BipBop Gear 1 - Single bitrate media playlist example",
+    "category": "vod",
+    "features": ["legacy", "media-playlist"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+    "source": "Akamai/Bitmovin",
+    "description": "Sintel - Multi-bitrate VOD up to 4K (4096x1744)",
+    "category": "vod",
+    "features": ["4k", "multi-bitrate", "multi-audio", "subtitles"],
+    "hlsVersion": "4"
+  },
+  {
+    "url": "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+    "source": "Akamai/Bitmovin",
+    "description": "Parkour - Multi-bitrate VOD stream",
+    "category": "vod",
+    "features": ["multi-bitrate"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8",
+    "source": "Akamai Live Test Stream",
+    "description": "Tears of Steel LIVE stream - 1920x800 max resolution",
+    "category": "live",
+    "features": ["live", "multi-bitrate"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://moctobpltc-i.akamaihd.net/hls/live/571329/eight/playlist.m3u8",
+    "source": "Akamai CDN",
+    "description": "Akamai live stream example",
+    "category": "live",
+    "features": ["live"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://skynewsau-live.akamaized.net/hls/live/2002689/skynewsau-extra1/master.m3u8",
+    "source": "Sky News Australia (Akamai)",
+    "description": "Sky News LIVE stream - 960x540 max resolution",
+    "category": "live",
+    "features": ["live", "news"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://nasa-i.akamaihd.net/hls/live/253565/NTV-Public1/master.m3u8",
+    "source": "NASA Live",
+    "description": "NASA TV Public Channel - Live broadcast stream",
+    "category": "live",
+    "features": ["live", "nasa"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    "source": "Mux Test Streams",
+    "description": "Big Buck Bunny - Multi-bitrate VOD, 5 renditions",
+    "category": "vod",
+    "features": ["multi-bitrate", "standard-test-content"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://test-streams.mux.dev/tos_ismc/main.m3u8",
+    "source": "Mux Test Streams",
+    "description": "Tears of Steel - Multi-bitrate VOD with IMSC captions",
+    "category": "vod",
+    "features": ["multi-bitrate", "subtitles"],
+    "hlsVersion": "6"
+  },
+  {
+    "url": "https://test-streams.mux.dev/dai-discontinuity-deltatre/manifest.m3u8",
+    "source": "Mux Test Streams",
+    "description": "Ad-insertion discontinuity test - 720x1280 with 10s segments",
+    "category": "vod",
+    "features": ["ad-insertion", "discontinuity"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "source": "Unified Streaming",
+    "description": "Tears of Steel - ISM format conversion to HLS",
+    "category": "vod",
+    "features": ["multi-bitrate", "ism-conversion"],
+    "hlsVersion": "4"
+  },
+  {
+    "url": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.mp4/.m3u8",
+    "source": "Unified Streaming",
+    "description": "Tears of Steel - MP4 source packaged as HLS",
+    "category": "vod",
+    "features": ["multi-bitrate", "mp4-source"],
+    "hlsVersion": "4"
+  },
+  {
+    "url": "https://cdn.bitmovin.com/content/assets/sintel/hls/playlist.m3u8",
+    "source": "Bitmovin CDN",
+    "description": "Sintel with multi-language audio tracks and subtitles",
+    "category": "vod",
+    "features": ["multi-audio", "multi-language", "subtitles"],
+    "hlsVersion": "4"
+  },
+  {
+    "url": "https://cdn.bitmovin.com/content/assets/art-of-motion-dash-hls-progressive/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+    "source": "Bitmovin Test Assets",
+    "description": "Art of Motion - Multi-bitrate adaptive streaming",
+    "category": "vod",
+    "features": ["multi-bitrate", "high-quality"],
+    "hlsVersion": "4"
+  },
+  {
+    "url": "https://cdn.bitmovin.com/content/assets/art-of-motion_drm/m3u8s/11331.m3u8",
+    "source": "Bitmovin DRM Test Assets",
+    "description": "Art of Motion with FairPlay DRM protection",
+    "category": "vod",
+    "features": ["encrypted", "fairplay", "drm"],
+    "hlsVersion": "5"
+  },
+  {
+    "url": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8",
+    "source": "Bitmovin",
+    "description": "Playhouse VR - 360-degree video test stream",
+    "category": "vod",
+    "features": ["vr-360", "multi-bitrate"],
+    "hlsVersion": "4"
+  },
+  {
+    "url": "https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8",
+    "source": "JW Player Test Content",
+    "description": "JW Player platform test stream - multi-bitrate Tears of Steel",
+    "category": "vod",
+    "features": ["multi-bitrate"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "http://playertest.longtailvideo.com/adaptive/captions/playlist.m3u8",
+    "source": "Longtail Video/JW Player",
+    "description": "Test stream with CEA-608 closed captions",
+    "category": "vod",
+    "features": ["captions", "cea-608"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8",
+    "source": "Wowza/JW Player Test Infrastructure",
+    "description": "ID3 metadata test stream - timed metadata and ad insertion markers",
+    "category": "vod",
+    "features": ["id3-metadata", "ad-markers"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://customer-f33zs165nr7gyfy4.cloudflarestream.com/6b9e68b07dfee8cc2d116e4c51d6a957/manifest/video.m3u8",
+    "source": "Cloudflare Stream CDN",
+    "description": "Cloudflare Stream test manifest with LL-HLS support",
+    "category": "vod",
+    "features": ["cloudflare", "ll-hls-capable"],
+    "hlsVersion": "6"
+  },
+  {
+    "url": "https://stream-akamai.castr.com/5b9352dbda7b8c769937e459/live_2361c920455111ea85db6911fe397b9e/index.fmp4.m3u8",
+    "source": "Castr / Akamai",
+    "description": "Castr live stream with fMP4 segments",
+    "category": "live",
+    "features": ["live", "fmp4"],
+    "hlsVersion": "6"
+  },
+  {
+    "url": "https://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8",
+    "source": "Vodobox",
+    "description": "Skate Phantom Flex - 4K UHD (3840x2160) VOD",
+    "category": "vod",
+    "features": ["4k", "high-framerate"],
+    "hlsVersion": "4"
+  },
+  {
+    "url": "https://www.tutorialspoint.com/videos/sample720.m3u8",
+    "source": "TutorialsPoint",
+    "description": "Educational sample video, 720p single bitrate",
+    "category": "vod",
+    "features": ["simple", "educational"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "https://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8",
+    "source": "Apple EdgeSuite",
+    "description": "Classic Apple HLS test stream (HTTPS)",
+    "category": "vod",
+    "features": ["legacy"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8",
+    "source": "Apple EdgeSuite",
+    "description": "Classic Apple HLS test stream (HTTP only)",
+    "category": "vod",
+    "features": ["legacy", "http-only"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "http://d3rlna7iyyu8wu.cloudfront.net/skip_armstrong/skip_armstrong_stereo_subs.m3u8",
+    "source": "Dolby Test Streams (via CloudFront)",
+    "description": "Dolby stereo content with subtitles - audio quality testing",
+    "category": "vod",
+    "features": ["dolby-audio", "subtitles"],
+    "hlsVersion": "3"
+  },
+  {
+    "url": "http://d3rlna7iyyu8wu.cloudfront.net/skip_armstrong/skip_armstrong_multichannel_subs.m3u8",
+    "source": "Dolby Test Streams (via CloudFront)",
+    "description": "Dolby multichannel surround sound with subtitles",
+    "category": "vod",
+    "features": ["dolby-audio", "surround-sound", "subtitles"],
+    "hlsVersion": "4"
+  }
+]
