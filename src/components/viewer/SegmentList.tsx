@@ -1,6 +1,7 @@
 // src/components/viewer/SegmentList.tsx
 import { useState } from 'react';
 import type { Segment } from '../../types/manifest';
+import { copySegmentUrls, copyAsCurlCommands } from '../../lib/utils/clipboard';
 
 interface SegmentListProps {
   segments: Segment[];
@@ -39,14 +40,28 @@ export function SegmentList({ segments }: SegmentListProps) {
           Segments ({segments.length})
         </h2>
 
-        {segments.length > 10 && (
+        <div className="flex gap-2">
           <button
-            onClick={() => setShowAll(!showAll)}
-            className="text-sm text-blue-600 hover:text-blue-700"
+            onClick={() => copySegmentUrls(segments)}
+            className="px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded"
           >
-            {showAll ? 'Show Less' : `Show All (${segments.length})`}
+            Copy URLs
           </button>
-        )}
+          <button
+            onClick={() => copyAsCurlCommands(segments.map(s => s.url))}
+            className="px-3 py-1 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 rounded"
+          >
+            Copy as cURL
+          </button>
+          {segments.length > 10 && (
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="text-sm text-blue-600 hover:text-blue-700"
+            >
+              {showAll ? 'Show Less' : `Show All`}
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Statistics */}
