@@ -12,6 +12,7 @@ import { UrlInfoPanel } from './UrlInfoPanel';
 import { DownloadManager } from './DownloadManager';
 import { PerformanceMetrics } from './PerformanceMetrics';
 import { VariantComparison } from './VariantComparison';
+import { ResolutionAnalysis } from './ResolutionAnalysis';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -122,6 +123,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Variant Comparison */}
       <VariantComparison variants={manifest.variants} />
+
+      {/* Resolution Analysis */}
+      <ResolutionAnalysis manifest={manifest} />
 
       {/* Variants Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
