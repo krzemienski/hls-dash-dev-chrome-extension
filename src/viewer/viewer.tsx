@@ -103,8 +103,11 @@ function Viewer() {
   // NEW v1.1.0: Conditional rendering based on viewMode
   if (viewMode === 'spec') {
     return (
-      <div className="h-screen">
-        <SpecValidatorView />
+      <div className="h-screen flex flex-col">
+        {manifest && <ViewerHeader />}
+        <div className="flex-1 overflow-hidden">
+          <SpecValidatorView />
+        </div>
         <ToastContainer />
       </div>
     );

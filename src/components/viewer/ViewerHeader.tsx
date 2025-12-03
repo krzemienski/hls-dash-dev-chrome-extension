@@ -6,10 +6,16 @@ export function ViewerHeader() {
   const manifest = useManifestStore((state) => state.manifest);
   const selectedView = useManifestStore((state) => state.selectedView);
   const setSelectedView = useManifestStore((state) => state.setSelectedView);
+  const viewMode = useManifestStore((state) => state.viewMode);
+  const setViewMode = useManifestStore((state) => state.setViewMode);
 
   if (!manifest) {
     return null;
   }
+
+  const handleModeToggle = () => {
+    setViewMode(viewMode === 'spec' ? 'analysis' : 'spec');
+  };
 
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-4">
@@ -23,9 +29,27 @@ export function ViewerHeader() {
           </p>
         </div>
 
-        <div className="flex gap-2">
-          <div className="flex gap-2 mr-4">
-            <button
+        <div className="flex gap-4 items-center">
+          {/* Mode Toggle Button */}
+          <button
+            onClick={handleModeToggle}
+            className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition shadow-sm"
+          >
+            {viewMode === 'spec' ? (
+              <>
+                <span>→ Deep Analysis</span>
+              </>
+            ) : (
+              <>
+                <span>← Spec Validator</span>
+              </>
+            )}
+          </button>
+
+          {/* View tabs (only in Analysis mode) */}
+          {viewMode === 'analysis' && (
+            <div className="flex gap-2">
+              <button
               onClick={() => setSelectedView('raw')}
               className={`px-4 py-2 rounded ${
                 selectedView === 'raw'
@@ -55,9 +79,10 @@ export function ViewerHeader() {
             >
               Timeline
             </button>
-          </div>
+            </div>
+          )}
 
-          <ExportMenu manifest={manifest} />
+          {viewMode === 'analysis' && <ExportMenu manifest={manifest} />}
         </div>
       </div>
 
