@@ -8,6 +8,7 @@ import { StructuredView } from '../components/viewer/StructuredView';
 import { TimelineView } from '../components/viewer/TimelineView';
 import { UrlInput } from '../components/viewer/UrlInput';
 import { QuickActions } from '../components/viewer/QuickActions';
+import { SpecValidatorView } from '../components/viewer/SpecValidatorView';
 import { parseManifest } from '../lib/parsers';
 import { addToHistory } from '../lib/utils/storage';
 import type { ManifestHistoryItem } from '../types/manifest';
@@ -19,6 +20,7 @@ function Viewer() {
   const loading = useManifestStore((state) => state.loading);
   const error = useManifestStore((state) => state.error);
   const selectedView = useManifestStore((state) => state.selectedView);
+  const viewMode = useManifestStore((state) => state.viewMode);
   const setManifest = useManifestStore((state) => state.setManifest);
   const setLoading = useManifestStore((state) => state.setLoading);
   const setError = useManifestStore((state) => state.setError);
@@ -98,6 +100,17 @@ function Viewer() {
     }
   };
 
+  // NEW v1.1.0: Conditional rendering based on viewMode
+  if (viewMode === 'spec') {
+    return (
+      <div className="h-screen">
+        <SpecValidatorView />
+        <ToastContainer />
+      </div>
+    );
+  }
+
+  // Analysis mode (existing v1.0.0 layout)
   return (
     <div className="min-h-screen bg-gray-50">
       {manifest && <ViewerHeader />}
