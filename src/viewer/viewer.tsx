@@ -11,6 +11,7 @@ import { QuickActions } from '../components/viewer/QuickActions';
 import { parseManifest } from '../lib/parsers';
 import { addToHistory } from '../lib/utils/storage';
 import type { ManifestHistoryItem } from '../types/manifest';
+import { ErrorBoundary } from '../components/common/ErrorBoundary';
 
 function Viewer() {
   const manifest = useManifestStore((state) => state.manifest);
@@ -113,6 +114,8 @@ function Viewer() {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Viewer />
+    <ErrorBoundary>
+      <Viewer />
+    </ErrorBoundary>
   </React.StrictMode>
 );

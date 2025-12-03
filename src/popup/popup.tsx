@@ -4,6 +4,7 @@ import '../styles/globals.css';
 import type { DetectedManifest } from '../types/manifest';
 import { HistoryTab } from '../components/popup/HistoryTab';
 import { SettingsTab } from '../components/popup/SettingsTab';
+import { ErrorBoundary } from '../components/common/ErrorBoundary';
 
 function Popup() {
   const [detectedManifests, setDetectedManifests] = useState<DetectedManifest[]>([]);
@@ -140,6 +141,8 @@ function Popup() {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Popup />
+    <ErrorBoundary>
+      <Popup />
+    </ErrorBoundary>
   </React.StrictMode>
 );
