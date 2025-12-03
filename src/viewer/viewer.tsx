@@ -7,6 +7,7 @@ import { RawView } from '../components/viewer/RawView';
 import { StructuredView } from '../components/viewer/StructuredView';
 import { TimelineView } from '../components/viewer/TimelineView';
 import { UrlInput } from '../components/viewer/UrlInput';
+import { QuickActions } from '../components/viewer/QuickActions';
 import { parseManifest } from '../lib/parsers';
 import { addToHistory } from '../lib/utils/storage';
 import type { ManifestHistoryItem } from '../types/manifest';
@@ -103,6 +104,9 @@ function Viewer() {
           </div>
         )}
       </main>
+
+      {/* Quick Actions FAB */}
+      {manifest && <QuickActions manifest={manifest} />}
     </div>
   );
 }
