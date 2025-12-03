@@ -1,5 +1,6 @@
 // src/lib/message-router.ts
 import type { ExtensionMessage, ExtensionResponse } from '../types/messages';
+import { fetchManifestContent } from './fetchers/manifest-fetcher';
 
 export async function handleMessage(
   message: ExtensionMessage,
@@ -37,8 +38,19 @@ export async function handleMessage(
 }
 
 // Placeholder handlers (will implement in next tasks)
-async function handleFetchManifest(_url: string): Promise<ExtensionResponse<string>> {
-  return { success: false, error: 'Not implemented' };
+async function handleFetchManifest(url: string): Promise<ExtensionResponse<string>> {
+  try {
+    const content = await fetchManifestContent(url);
+    return {
+      success: true,
+      data: content
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Failed to fetch manifest'
+    };
+  }
 }
 
 async function handleUpdateIgnoreList(_url: string, _ignore: boolean): Promise<ExtensionResponse> {
