@@ -55,9 +55,14 @@ export function QuickActions({ manifest }: QuickActionsProps) {
       label: 'Open in New Tab',
       icon: '🔄',
       handler: () => {
-        const viewerUrl = chrome.runtime.getURL('src/viewer/viewer.html') +
-          '#' + encodeURIComponent(manifest.url);
-        window.open(viewerUrl, '_blank');
+        if (typeof chrome !== 'undefined' && chrome.runtime) {
+          const viewerUrl = chrome.runtime.getURL('src/viewer/viewer.html') +
+            '#' + encodeURIComponent(manifest.url);
+          window.open(viewerUrl, '_blank');
+        } else {
+          // Standalone mode - open relative URL
+          window.open(`viewer.html#${encodeURIComponent(manifest.url)}`, '_blank');
+        }
         setIsOpen(false);
       }
     }

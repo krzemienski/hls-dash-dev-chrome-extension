@@ -30,21 +30,29 @@ export function clearDetectedManifests(tabId: number) {
   detectedManifestsMap.delete(tabId);
 }
 
-// Clear when tab is closed
-chrome.tabs.onRemoved.addListener((tabId) => {
-  clearDetectedManifests(tabId);
-});
+// Clear when tab is closed (only in extension context)
+if (typeof chrome !== 'undefined' && chrome.tabs) {
+  chrome.tabs.onRemoved.addListener((tabId) => {
+    clearDetectedManifests(tabId);
+  });
+}
 
 /**
  * Persistent storage using chrome.storage.local
  */
 
 export async function getHistory(): Promise<ManifestHistoryItem[]> {
+  if (typeof chrome === 'undefined' || !chrome.storage) {
+    return [];
+  }
   const result = await chrome.storage.local.get('history');
   return result.history || [];
 }
 
 export async function addToHistory(item: ManifestHistoryItem): Promise<void> {
+  if (typeof chrome === 'undefined' || !chrome.storage) {
+    return;
+  }
   const history = await getHistory();
 
   // Avoid duplicates and limit to 50 items
@@ -55,15 +63,24 @@ export async function addToHistory(item: ManifestHistoryItem): Promise<void> {
 }
 
 export async function clearHistory(): Promise<void> {
+  if (typeof chrome === 'undefined' || !chrome.storage) {
+    return;
+  }
   await chrome.storage.local.set({ history: [] });
 }
 
 export async function getSettings(): Promise<ExtensionSettings> {
+  if (typeof chrome === 'undefined' || !chrome.storage) {
+    return getDefaultSettings();
+  }
   const result = await chrome.storage.local.get('settings');
   return result.settings || getDefaultSettings();
 }
 
 export async function updateSettings(settings: Partial<ExtensionSettings>): Promise<void> {
+  if (typeof chrome === 'undefined' || !chrome.storage) {
+    return;
+  }
   const current = await getSettings();
   const updated = { ...current, ...settings };
   await chrome.storage.local.set({ settings: updated });

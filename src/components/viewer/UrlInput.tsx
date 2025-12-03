@@ -19,18 +19,32 @@ export function UrlInput() {
     setError(null);
 
     try {
-      // Send message to service worker to fetch manifest
-      const response = await chrome.runtime.sendMessage({
-        action: 'fetch-manifest',
-        url: url.trim()
-      });
+      let manifestContent: string;
 
-      if (!response.success) {
-        throw new Error(response.error || 'Failed to fetch manifest');
+      // Check if running in extension context
+      if (typeof chrome !== 'undefined' && chrome.runtime) {
+        // Use service worker
+        const response = await chrome.runtime.sendMessage({
+          action: 'fetch-manifest',
+          url: url.trim()
+        });
+
+        if (!response.success) {
+          throw new Error(response.error || 'Failed to fetch manifest');
+        }
+
+        manifestContent = response.data;
+      } else {
+        // Fallback: Direct fetch (for testing/standalone)
+        const response = await fetch(url.trim());
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        manifestContent = await response.text();
       }
 
       // Parse the manifest
-      const parsed = parseManifest(response.data, url.trim());
+      const parsed = parseManifest(manifestContent, url.trim());
       setManifest(parsed);
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Failed to load manifest');

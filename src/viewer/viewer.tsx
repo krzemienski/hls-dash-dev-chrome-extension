@@ -37,16 +37,31 @@ function Viewer() {
     setError(null);
 
     try {
-      const response = await chrome.runtime.sendMessage({
-        action: 'fetch-manifest',
-        url
-      });
+      let manifestContent: string;
 
-      if (!response.success) {
-        throw new Error(response.error || 'Failed to fetch manifest');
+      // Check if running in extension context
+      if (typeof chrome !== 'undefined' && chrome.runtime) {
+        // Use service worker
+        const response = await chrome.runtime.sendMessage({
+          action: 'fetch-manifest',
+          url
+        });
+
+        if (!response.success) {
+          throw new Error(response.error || 'Failed to fetch manifest');
+        }
+
+        manifestContent = response.data;
+      } else {
+        // Fallback: Direct fetch (for testing/standalone)
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        manifestContent = await response.text();
       }
 
-      const parsed = parseManifest(response.data, url);
+      const parsed = parseManifest(manifestContent, url);
       setManifest(parsed);
 
       // Add to history
