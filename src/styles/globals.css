@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* Custom extension styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Prism.js theme overrides will go here */
