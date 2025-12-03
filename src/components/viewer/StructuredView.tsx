@@ -11,6 +11,7 @@ import { StatsDashboard } from './StatsDashboard';
 import { UrlInfoPanel } from './UrlInfoPanel';
 import { DownloadManager } from './DownloadManager';
 import { PerformanceMetrics } from './PerformanceMetrics';
+import { VariantComparison } from './VariantComparison';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -118,6 +119,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Performance Metrics */}
       <PerformanceMetrics manifest={manifest} />
+
+      {/* Variant Comparison */}
+      <VariantComparison variants={manifest.variants} />
 
       {/* Variants Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
