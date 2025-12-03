@@ -7,6 +7,12 @@ function Popup() {
   const [detectedManifests, setDetectedManifests] = useState<DetectedManifest[]>([]);
   const [activeTab, setActiveTab] = useState<'detected' | 'history' | 'settings'>('detected');
 
+  const handleManifestClick = (url: string) => {
+    // Open viewer in new tab and pass manifest URL via URL hash
+    const viewerUrl = chrome.runtime.getURL('src/viewer/viewer.html') + '#' + encodeURIComponent(url);
+    chrome.tabs.create({ url: viewerUrl });
+  };
+
   useEffect(() => {
     // Get current tab ID and fetch detected manifests
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -83,7 +89,8 @@ function Popup() {
                 {detectedManifests.map((manifest, index) => (
                   <div
                     key={index}
-                    className="p-3 border border-gray-200 rounded hover:border-blue-400 cursor-pointer"
+                    onClick={() => handleManifestClick(manifest.url)}
+                    className="p-3 border border-gray-200 rounded hover:border-blue-400 cursor-pointer transition-colors"
                   >
                     <div className="flex items-center justify-between">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
