@@ -7,7 +7,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 });
 
 // Message handler placeholder
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   console.log('Message received:', message);
   sendResponse({ success: true });
   return true; // Required for async response
