@@ -13,6 +13,7 @@ import { DownloadManager } from './DownloadManager';
 import { PerformanceMetrics } from './PerformanceMetrics';
 import { VariantComparison } from './VariantComparison';
 import { ResolutionAnalysis } from './ResolutionAnalysis';
+import { FrameRateAnalysis } from './FrameRateAnalysis';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -126,6 +127,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Resolution Analysis */}
       <ResolutionAnalysis manifest={manifest} />
+
+      {/* Frame Rate Analysis */}
+      <FrameRateAnalysis manifest={manifest} />
 
       {/* Variants Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
