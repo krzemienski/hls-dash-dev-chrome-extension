@@ -74,7 +74,7 @@ export function generateDownloadScript(
 export function generateFFmpegConcat(urls: string[]): string {
   const lines = ['# FFmpeg concat demuxer file', ''];
 
-  urls.forEach((url, index) => {
+  urls.forEach((_url, index) => {
     const filename = `segment_${index.toString().padStart(4, '0')}.ts`;
     lines.push(`file '${filename}'`);
   });

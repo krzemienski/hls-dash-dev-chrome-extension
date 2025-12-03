@@ -9,6 +9,7 @@ import { CodecInfoPanel } from './CodecInfoPanel';
 import { BandwidthCalculator } from './BandwidthCalculator';
 import { StatsDashboard } from './StatsDashboard';
 import { UrlInfoPanel } from './UrlInfoPanel';
+import { DownloadManager } from './DownloadManager';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -124,7 +125,10 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Segments Section (if present) */}
       {manifest.segments && manifest.segments.length > 0 && (
-        <SegmentList segments={manifest.segments} />
+        <>
+          <SegmentList segments={manifest.segments} />
+          <DownloadManager manifest={manifest} />
+        </>
       )}
     </div>
   );
