@@ -7,6 +7,26 @@ console.log('Service worker loaded');
 
 chrome.runtime.onInstalled.addListener((details) => {
   console.log('Extension installed:', details.reason);
+
+  // Create context menu for manifest links
+  chrome.contextMenus.create({
+    id: 'analyze-manifest',
+    title: 'Analyze with HLS+DASH Viewer',
+    contexts: ['link'],
+    targetUrlPatterns: [
+      '*://*/*.m3u8*',
+      '*://*/*.mpd*'
+    ]
+  });
+});
+
+// Handle context menu clicks
+chrome.contextMenus.onClicked.addListener((info, _tab) => {
+  if (info.menuItemId === 'analyze-manifest' && info.linkUrl) {
+    const viewerUrl = chrome.runtime.getURL('src/viewer/viewer.html') +
+      '#' + encodeURIComponent(info.linkUrl);
+    chrome.tabs.create({ url: viewerUrl });
+  }
 });
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
