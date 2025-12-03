@@ -7,6 +7,7 @@ import { SegmentList } from './SegmentList';
 import { BitrateChart } from './BitrateChart';
 import { CodecInfoPanel } from './CodecInfoPanel';
 import { BandwidthCalculator } from './BandwidthCalculator';
+import { StatsDashboard } from './StatsDashboard';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -17,6 +18,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
     <div className="space-y-6">
       {/* Validation Report */}
       <ValidationReport manifest={manifest} />
+
+      {/* Statistics Dashboard */}
+      <StatsDashboard manifest={manifest} />
 
       {/* Metadata Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
