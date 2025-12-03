@@ -1,6 +1,7 @@
 // src/components/viewer/StructuredView.tsx
 import type { ParsedManifest } from '../../types/manifest';
 import { VariantList } from './VariantList';
+import { ABRLadder } from './ABRLadder';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -84,6 +85,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
           )}
         </dl>
       </section>
+
+      {/* ABR Ladder Analysis */}
+      <ABRLadder manifest={manifest} />
 
       {/* Variants Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
