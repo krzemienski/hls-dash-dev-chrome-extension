@@ -87,7 +87,7 @@ export function simulatePlayback(
   let bufferHealth = 0;
   let rebufferingTime = 0;
 
-  bandwidthProfile.forEach((point, index) => {
+  bandwidthProfile.forEach((point, _index) => {
     // Get recommended variant for current bandwidth
     const recommendedVariant = getRecommendedVariant(variants, point.bandwidth);
 

@@ -5,6 +5,7 @@ import { useManifestStore } from '../store/manifest-store';
 import { ViewerHeader } from '../components/viewer/ViewerHeader';
 import { RawView } from '../components/viewer/RawView';
 import { StructuredView } from '../components/viewer/StructuredView';
+import { TimelineView } from '../components/viewer/TimelineView';
 import { UrlInput } from '../components/viewer/UrlInput';
 
 function Viewer() {
@@ -50,11 +51,7 @@ function Viewer() {
           <div>
             {selectedView === 'raw' && <RawView manifest={manifest} />}
             {selectedView === 'structured' && <StructuredView manifest={manifest} />}
-            {selectedView === 'timeline' && (
-              <div className="bg-white p-6 rounded-lg border border-gray-200">
-                <p className="text-gray-600">Timeline view coming soon...</p>
-              </div>
-            )}
+            {selectedView === 'timeline' && <TimelineView manifest={manifest} />}
           </div>
         )}
       </main>
