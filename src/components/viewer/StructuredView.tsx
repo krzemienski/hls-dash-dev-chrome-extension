@@ -5,6 +5,7 @@ import { ABRLadder } from './ABRLadder';
 import { ValidationReport } from './ValidationReport';
 import { SegmentList } from './SegmentList';
 import { BitrateChart } from './BitrateChart';
+import { CodecInfoPanel } from './CodecInfoPanel';
 
 interface StructuredViewProps {
   manifest: ParsedManifest;
@@ -97,6 +98,9 @@ export function StructuredView({ manifest }: StructuredViewProps) {
 
       {/* Bitrate Chart */}
       <BitrateChart variants={manifest.variants} />
+
+      {/* Codec Information */}
+      <CodecInfoPanel manifest={manifest} />
 
       {/* Variants Section */}
       <section className="bg-white p-6 rounded-lg border border-gray-200">
