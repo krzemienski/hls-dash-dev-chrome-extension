@@ -29,27 +29,39 @@ function Viewer() {
 
   // Auto-load manifest from URL hash
   useEffect(() => {
-    const hash = window.location.hash.slice(1);
-    if (hash) {
-      const url = decodeURIComponent(hash);
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        const url = decodeURIComponent(hash);
 
-      // NEW v1.1.0: Detect entry point
-      const referrer = document.referrer;
-      const isFromExtension = referrer.includes('popup.html') ||
-                              referrer.includes('panel.html') ||
-                              referrer.includes('devtools.html');
-      const entryPoint = isFromExtension ? 'manual' : 'interception';
+        // NEW v1.1.0: Detect entry point
+        const referrer = document.referrer;
+        const isFromExtension = referrer.includes('popup.html') ||
+                                referrer.includes('panel.html') ||
+                                referrer.includes('devtools.html');
+        const entryPoint = isFromExtension ? 'manual' : 'interception';
 
-      setEntryPoint(entryPoint);
+        setEntryPoint(entryPoint);
 
-      // Set default mode based on entry point
-      const defaultMode = entryPoint === 'interception' ? 'spec' : 'analysis';
-      setViewMode(defaultMode);
+        // Set default mode based on entry point
+        const defaultMode = entryPoint === 'interception' ? 'spec' : 'analysis';
+        setViewMode(defaultMode);
 
-      console.log(`[v1.1.0] Entry point: ${entryPoint}, Default mode: ${defaultMode}`);
+        console.log(`[v1.1.0] Entry point: ${entryPoint}, Default mode: ${defaultMode}`);
 
-      loadManifest(url);
-    }
+        loadManifest(url);
+      }
+    };
+
+    // Load initial manifest
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   const loadManifest = async (url: string) => {
